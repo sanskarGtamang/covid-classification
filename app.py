@@ -33,9 +33,6 @@ df = pd.DataFrame({
 
 # Load the model
 load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
-st.error("Model file 'Covid_Classification.pickle' not found.")
-st.stop()
-
 # Button to submit and show results
 if st.button("Submit"):
     try:
