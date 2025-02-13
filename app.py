@@ -31,9 +31,7 @@ df = pd.DataFrame({
     'Known_contact': [Known_contact]
 })
 
-# Load the model
 load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
-# Button to submit and show results
 if st.button("Submit"):
     try:
         pred = load_model.predict(df)
