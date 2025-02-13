@@ -26,9 +26,7 @@ df = pd.DataFrame({'Cough_symptoms':[Cough_symptoms],
        'Known_contact':[Known_contact]
 })
  
-# load_model = pickle.load(open('C:\Users\LENOVO\Desktop\Desktop\Broadway\Data Science Classwork\covid-19-classification\covid19\Covid_Classification.pickle', 'rb'))
-load_model = pickle.load(open('\Covid_Classification.pickle', 'rb'))
-
+load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
 if st.button("Submit"):
     st.write("Success")
     pred = load_model.predict(df)
