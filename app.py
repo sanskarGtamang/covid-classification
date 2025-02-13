@@ -44,3 +44,5 @@ if st.button("Submit"):
 
 model_path = os.path.join(os.getcwd(), 'Covid_Classification.pickle')
 load_model = pickle.load(open(model_path, 'rb'))
+
+#project upload
