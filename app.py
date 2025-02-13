@@ -27,7 +27,10 @@ df = pd.DataFrame({'Cough_symptoms':[Cough_symptoms],
        'Known_contact':[Known_contact]
 })
  
-load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
+try:
+    load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
+except Exception as e:
+    print(f"Error loading the model: {e}")
 if st.button("Submit"):
     st.write("Success")
     pred = load_model.predict(df)
