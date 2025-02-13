@@ -1,9 +1,8 @@
 import streamlit as st
 import pandas as pd
 import pickle
-
  
-st.title("covid classification")
+st.title("Covid Classification")
  
 Cough_symptoms = st.radio("Cough Symptoms", [True, False])
 Fever = st.radio("Fever", [True, False])
@@ -27,10 +26,7 @@ df = pd.DataFrame({'Cough_symptoms':[Cough_symptoms],
        'Known_contact':[Known_contact]
 })
  
-try:
-    load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
-except Exception as e:
-    print(f"Error loading the model: {e}")
+load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
 if st.button("Submit"):
     st.write("Success")
     pred = load_model.predict(df)
@@ -38,4 +34,3 @@ if st.button("Submit"):
         st.write("Positive")
     else:
         st.write("Negative")
- 
