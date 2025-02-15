@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
 # Title of the app
 st.title("Covid Classification")
 
@@ -31,7 +32,7 @@ df = pd.DataFrame({
     'Known_contact': [Known_contact]
 })
 
-load_model = pickle.load(open('Covid_Classification.pickle', 'rb'))
+
 if st.button("Submit"):
     try:
         pred = load_model.predict(df)
